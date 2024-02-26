@@ -1,14 +1,14 @@
 package com.redlimerl.tabfocus.mixins.accessor;
 
-import net.minecraft.client.options.GameOptions;
+import net.minecraft.client.option.GameOptions;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-@Mixin(GameOptions.Option.class)
+@Mixin(GameOptions.class_316.class)
 public interface GameOptionsOptionAccessor {
-    @Accessor("step")
+    @Accessor("field_1928")
     float getStep();
 
-    @Accessor("min")
+    @Accessor("field_1947")
     float getMin();
 }

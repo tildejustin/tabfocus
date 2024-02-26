@@ -12,17 +12,12 @@
   },
   "license": "MIT",
   "environment": "client",
-  "entrypoints": {
-    "client": [
-      "com.redlimerl.tabfocus.TabFocus"
-    ]
-  },
   "mixins": [
     "tabfocus.mixins.json"
   ],
   "accessWidener" : "tabfocus.accesswidener",
   "depends": {
     "fabricloader": ">=0.12.12",
-    "minecraft": "1.12.x"
+    "minecraft": "1.12"
   }
 }

@@ -11,16 +11,22 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TextFieldWidget.class)
 public abstract class TextFieldWidgetMixin extends DrawableHelper {
-    @Shadow public abstract boolean isVisible();
+    @Shadow
+    public abstract boolean isVisible();
 
-    @Shadow public abstract boolean isFocused();
+    @Shadow
+    public abstract boolean method_1871();
 
-    @Shadow public abstract void setFocused(boolean focused);
+    @Shadow
+    public abstract void setTextFieldFocused(boolean focused);
 
-    @Inject(method = "render", at = @At("HEAD"))
+    @Inject(method = "method_1857", at = @At("HEAD"))
     public void onRender(CallbackInfo ci) {
-        FocusableWidget.initWidget(this, () -> this.isVisible() && !this.isFocused(),
-                () -> this.setFocused(true),
-                () -> this.setFocused(false));
+        FocusableWidget.initWidget(
+                this,
+                () -> this.isVisible() && !this.method_1871(),
+                () -> this.setTextFieldFocused(true),
+                () -> this.setTextFieldFocused(false)
+        );
     }
 }
